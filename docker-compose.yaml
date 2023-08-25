@@ -3,20 +3,20 @@ services:
   app:
     build: .
     image: "netquest-rails:local"
-    command: bundle exec unicorn -c config/unicorn.rb
+    command: unicorn -c config/unicorn.rb
     volumes:
       - .:/app
     env_file:
       - .env
     ports:
-      - "8000:8000"
+      - "8010:8010"
     depends_on:
       - database
   
   database:
     image: mysql:latest
     volumes:
-      - ./.mysql-data:/var/lib/postgresql/data
+      - ./.mysql-data:/var/lib/mysql
     env_file:
       - .env
     ports:
