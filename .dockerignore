@@ -1,0 +1,8 @@
+.git
+.dockerignore
+.env
+vendor/bundle/
+tmp/
+
+.idea
+.vscode
