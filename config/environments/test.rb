@@ -52,6 +52,10 @@ Rails.application.configure do
   # Tell Active Support which deprecation messages to disallow.
   config.active_support.disallowed_deprecation_warnings = []
 
+  # Configure logging to output to the log file
+  config.logger = Logger.new(Rails.root.join('log', 'test.log'))
+  config.log_level = :debug
+
   # Raises error for missing translations.
   # config.i18n.raise_on_missing_translations = true
 
