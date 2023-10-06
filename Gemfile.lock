@@ -93,6 +93,7 @@ GEM
       rdoc
       reline (>= 0.3.8)
     jsonapi-renderer (0.2.2)
+    jwt (2.7.1)
     kgio (2.11.4)
     loofah (2.21.3)
       crass (~> 1.0.2)
@@ -188,6 +189,7 @@ DEPENDENCIES
   bcrypt
   bootsnap
   debug
+  jwt
   mysql2 (~> 0.5)
   puma (~> 5.0)
   rack-cors
