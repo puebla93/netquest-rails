@@ -1,4 +1,5 @@
 require_relative "boot"
+require_relative "../app/middlewares/auth"
 
 require "rails/all"
 
@@ -27,5 +28,7 @@ module NetquestRails
     config.log_level = :debug
     config.log_tags  = [:subdomain, :uuid]
     config.logger    = ActiveSupport::TaggedLogging.new(Logger.new(STDOUT))
+
+    config.middleware.use AuthMiddleware
   end
 end
