@@ -1,4 +1,5 @@
 class Api::V1::RecordsController < ApplicationController
+    before_action :authenticate_user
     before_action :set_record, only: [:show, :update, :destroy]
 
     def index
@@ -56,5 +57,12 @@ class Api::V1::RecordsController < ApplicationController
 
     def record_params
         params.require(:record).permit(:title, :img)
+    end
+
+    def authenticate_user
+        # Check if the user_id session variable is present
+        unless request.env['user']
+            render json: {details: "User is not authenticated"}, status: :unauthorized
+        end
     end
 end
